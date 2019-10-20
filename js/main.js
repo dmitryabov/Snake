@@ -51,10 +51,10 @@ Block.prototype.drawSquare = function (color) {
 
 
 Block.prototype.drawCircle = function (color) {
-    var centerX = this.col * blockSize + blockSize / 2;
-    var centerY = this.row * blockSize + blockSize / 2;
-    ctx.fillStyle = color;
-    ctx.fillRect(centerX, centerY, blockSize/2,  Math.PI * 2, true);
+  var x = this.col * blockSize;
+  var y = this.row * blockSize;
+  ctx.fillStyle = color;
+  ctx.fillRect(x, y, blockSize, blockSize);
    };
 
 Block.prototype.equal = function (otherBlock) {
@@ -187,7 +187,7 @@ var intervalId = setInterval(function () {
  snake.draw();
  apple.draw();
  drawBorder();
-}, 100);
+}, 35);
 
 
 // Преобразуем коды клавиш в направления
@@ -197,6 +197,8 @@ var intervalId = setInterval(function () {
  39: "right",
  40: "down"
 };
+
+
 // Задаем обработчик события keydown (клавиши-стрелки)
 $("body").keydown(function (event) {
  var newDirection = directions[event.keyCode];
