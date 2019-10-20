@@ -76,6 +76,10 @@ var Snake = function () {
 Snake.prototype.draw = function () {
   for (var i = 0; i < this.segments.length; i++) {
   this.segments[i].drawSquare("Blue");
+  if (i % 2 == 0) {
+    this.segments[i].drawSquare("yellow");
+  }
+  this.segments[0].drawSquare("Green");
   }
 };
 
