@@ -187,7 +187,7 @@ var intervalId = setInterval(function () {
  snake.draw();
  apple.draw();
  drawBorder();
-}, 35);
+}, 70);
 
 
 // Преобразуем коды клавиш в направления
